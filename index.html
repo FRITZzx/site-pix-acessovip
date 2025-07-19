@@ -7,50 +7,63 @@
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      padding: 40px;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #d1f5d3; /* tom pastel de aprovação */
     }
-    .qrcode {
-      margin: 20px auto;
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
     }
-    .chave-pix {
-      margin-top: 20px;
-      font-size: 18px;
-      word-break: break-all;
-      background-color: #f0f0f0;
-      padding: 10px;
-      display: inline-block;
-      border-radius: 5px;
+
+    .qrcode img {
+      max-width: 250px;
+      margin-bottom: 30px;
     }
+
     button {
       margin-top: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
+      padding: 15px 30px;
+      font-size: 18px;
       cursor: pointer;
-      background-color: #4CAF50;
+      background-color: #4CAF50; /* verde sucesso */
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
     }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
     .copiado {
       color: green;
-      font-size: 14px;
-      margin-top: 10px;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+
+    /* Oculta a chave Pix */
+    .chave-pix {
+      display: none;
     }
   </style>
 </head>
 <body>
 
   <h2>Faça um Pix</h2>
-  <p>Escaneie o QR Code abaixo ou copie a chave Pix:</p>
 
-  <!-- QR Code gerado manualmente (substitua o link da imagem por um gerador real) -->
   <div class="qrcode">
-    <img src="<a href="https://imgbb.com/"><img src="https://i.ibb.co/tPxzhCBL/qrcode-pix.png" alt="qrcode-pix" border="0"></a>" alt="QR Code Pix">
+    <img src="https://raw.githubusercontent.com/usuario/repositorio/main/qrcode-pix.png" alt="QR Code Pix">
+    <!-- Substitua acima pelo seu link raw do GitHub -->
   </div>
 
-  <!-- Chave Pix e botão de cópia -->
   <div>
-    <div class="chave-pix" id="chavePix">00020126460014BR.GOV.BCB.PIX0124henquesantos22@gmail.com520400005303986540520.005802BR5915Henrique Santos6014Santa Catarina62140510PGMTOVIP20630422E9</div><br>
+    <div class="chave-pix" id="chavePix">00020126460014BR.GOV.BCB.PIX0124henquesantos22@gmail.com520400005303986540520.005802BR5915Henrique Santos6014Santa Catarina62140510PGMTOVIP20630422E9</div>
     <button onclick="copiarChavePix()">Clique aqui para copiar a chave</button>
     <div id="mensagem" class="copiado"></div>
   </div>
@@ -59,7 +72,7 @@
     function copiarChavePix() {
       const chave = document.getElementById('chavePix').textContent;
       navigator.clipboard.writeText(chave).then(function() {
-        document.getElementById('mensagem').textContent = "Chave copiada!";
+        document.getElementById('mensagem').textContent = "Chave Pix copiada com sucesso!";
       }, function() {
         document.getElementById('mensagem').textContent = "Erro ao copiar a chave.";
       });
