@@ -35,6 +35,7 @@
       color: white;
       border: none;
       border-radius: 8px;
+      text-decoration: none;
     }
 
     button:hover {
@@ -45,6 +46,15 @@
       color: green;
       font-size: 16px;
       margin-top: 15px;
+    }
+
+    .botao-telegram {
+      background-color: #0088cc; /* cor Telegram */
+      margin-top: 20px;
+    }
+
+    .botao-telegram:hover {
+      background-color: #007ab8;
     }
 
     /* Oculta a chave Pix */
@@ -66,6 +76,11 @@
     <div class="chave-pix" id="chavePix">00020126460014BR.GOV.BCB.PIX0124henquesantos22@gmail.com520400005303986540520.005802BR5915Henrique Santos6014Santa Catarina62140510PGMTOVIP20630422E9</div>
     <button onclick="copiarChavePix()">Clique aqui para copiar a chave</button>
     <div id="mensagem" class="copiado"></div>
+
+    <!-- Botão de confirmação de pagamento -->
+    <a href="https://t.me/ProibidosOficiais" target="_blank">
+      <button class="botao-telegram">JÁ REALIZEI O PAGAMENTO</button>
+    </a>
   </div>
 
   <script>
